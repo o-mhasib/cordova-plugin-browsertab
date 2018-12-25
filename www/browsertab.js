@@ -13,7 +13,12 @@
  */
 
 var exec = require('cordova/exec');
-
+//------hasib----
+window.handleOpenURL=(function (url){ //override the default handler
+  // alert('Deeplink call');
+   window.openedViaDeeplink = url;
+});
+//-------end y hasib-------
 var isAvailable = function(success, error) {
   exec(success, error, 'BrowserTab', 'isAvailable', []);
 };
